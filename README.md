@@ -1,6 +1,16 @@
 # PSUSphere
-PSUSphere is a Django-based application for managing student organizations, programs, and members at PSU.
+
+## Description
+PSUSphere is a Django-based application to manage student organizations, programs, and memberships in a university.
 
 ## Features
-- Manage colleges, programs, organizations, and students
-- Admin interface for CRUD operations
+- Manage Colleges
+- Manage Programs under Colleges
+- Manage Student Organizations
+- Register Students
+- Track student membership in organizations
+- Admin interface with search and filters
+
+## Authors
+- Paul Elbridge R. Mendoza
+- Kevin D. Docog
