@@ -17,7 +17,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from studentorg.views import ( HomePageView, OrganizationList, OrganizationCreateView, OrganizationUpdateView, OrganizationDeleteView,
-                                OrgMemberList, OrgMemberCreateView, OrgMemberUpdateView, OrgMemberDeleteView)
+                                OrgMemberList, OrgMemberCreateView, OrgMemberUpdateView, OrgMemberDeleteView,
+                                StudentList)
 from studentorg import views
 
 urlpatterns = [
@@ -35,4 +36,7 @@ urlpatterns = [
     path('orgmember_list/add', OrgMemberCreateView.as_view(), name='orgmember-add'),
     path('orgmember_list/<int:pk>/', OrgMemberUpdateView.as_view(), name='orgmember-update'),
     path('orgmember_list/<int:pk>/delete/', OrgMemberDeleteView.as_view(), name='orgmember-delete'),
+
+    #Student
+    path('student_list', StudentList.as_view(), name='student-list'),
 ]
