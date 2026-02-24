@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from studentorg.views import ( HomePageView, OrganizationList, OrganizationCreateView, OrganizationUpdateView, OrganizationDeleteView,
-                                OrgMemberList, OrgMemberCreateView)
+                                OrgMemberList, OrgMemberCreateView, OrgMemberUpdateView)
 from studentorg import views
 
 urlpatterns = [
@@ -33,4 +33,5 @@ urlpatterns = [
     #Org. Member
     path('orgmember_list', OrgMemberList.as_view(), name='orgmember-list'),
     path('orgmember_list/add', OrgMemberCreateView.as_view(), name='orgmember-add'),
+    path('orgmember_list/<int:pk>/', OrgMemberUpdateView.as_view(), name='orgmember-update'),
 ]
