@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.views.generic.list import ListView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from studentorg.models import Organization, OrgMember, Student
-from studentorg.forms import OrganizationForm, OrgMemberForm
+from studentorg.forms import OrganizationForm, OrgMemberForm, StudentForm
 from django.urls import reverse_lazy
 
 
@@ -65,4 +65,10 @@ class StudentList(ListView):
     context_object_name = 'student'
     template_name = 'student_list.html'
     paginate_by = 5
+
+class StudentCreateView(CreateView):
+    model = Student
+    form_class = StudentForm
+    template_name = 'student_form.html'
+    success_url = reverse_lazy('student-list')
 
